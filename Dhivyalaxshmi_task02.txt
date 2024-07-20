@@ -1,0 +1,155 @@
+
+SQL> CREATE TABLE employee(Empid INT PRIMARY KEY, name Varchar (20), salary decimal(10, 2),
+  2  Hiredate date) ;
+
+Table created.
+
+SQL> INSERT ALL
+  2      INTO employee (Empid, name, salary, Hiredate) VALUES (1, 'Guru', 5000, TO_DATE('2024-04-09', 'YYYY-MM-DD'))
+  3      INTO employee (Empid, name, salary, Hiredate) VALUES (2, 'Devi', 6000, TO_DATE('2024-05-10', 'YYYY-MM-DD'))
+  4      INTO employee (Empid, name, salary, Hiredate) VALUES (3, 'Saron', 10000, TO_DATE('2024-06-09', 'YYYY-MM-DD'))
+  5      INTO employee (Empid, name, salary, Hiredate) VALUES (4, 'Sam', 7000, TO_DATE('2024-01-05', 'YYYY-MM-DD'))
+  6      INTO employee (Empid, name, salary, Hiredate) VALUES (5, 'shruti', 8000, TO_DATE('2024-02-12', 'YYYY-MM-DD'))
+  7  SELECT * FROM dual;
+
+5 rows created.
+
+SQL> select * from employee;
+
+     EMPID NAME                     SALARY HIREDATE
+---------- -------------------- ---------- ---------
+         1 Guru                       5000 09-APR-24
+         2 Devi                       6000 10-MAY-24
+         3 Saron                     10000 09-JUN-24
+         4 Sam                        7000 05-JAN-24
+         5 shruti                     8000 12-FEB-24
+
+SQL> SELECT SUM(salary) as TotalSalary FROM employee;
+
+TOTALSALARY
+-----------
+      36000
+
+SQL> SELECT AVG(salary) as average FROM employee;
+
+   AVERAGE
+----------
+      7200
+
+SQL> SELECT COUNT(Empid) as NoofEmployees FROM  employee;
+
+NOOFEMPLOYEES
+-------------
+            5
+
+SQL> SELECT MAX(salary) as Maxsalary
+  2  FROM employee;
+
+ MAXSALARY
+----------
+     10000
+
+SQL> CREATE TABLE employee(Empid INT PRIMARY KEY, name Varchar (20), salary decimal(10, 2),
+  2  Hiredate date) ;
+
+Table created.
+
+SQL> INSERT ALL
+  2      INTO employee (Empid, name, salary, Hiredate) VALUES (1, 'Guru', 5000, TO_DATE('2024-04-09', 'YYYY-MM-DD'))
+  3      INTO employee (Empid, name, salary, Hiredate) VALUES (2, 'Devi', 6000, TO_DATE('2024-05-10', 'YYYY-MM-DD'))
+  4      INTO employee (Empid, name, salary, Hiredate) VALUES (3, 'Saron', 10000, TO_DATE('2024-06-09', 'YYYY-MM-DD'))
+  5      INTO employee (Empid, name, salary, Hiredate) VALUES (4, 'Sam', 7000, TO_DATE('2024-01-05', 'YYYY-MM-DD'))
+  6      INTO employee (Empid, name, salary, Hiredate) VALUES (5, 'shruti', 8000, TO_DATE('2024-02-12', 'YYYY-MM-DD'))
+  7  SELECT * FROM dual;
+
+5 rows created.
+
+SQL> select * from employee;
+
+     EMPID NAME                     SALARY HIREDATE
+---------- -------------------- ---------- ---------
+         1 Guru                       5000 09-APR-24
+         2 Devi                       6000 10-MAY-24
+         3 Saron                     10000 09-JUN-24
+         4 Sam                        7000 05-JAN-24
+         5 shruti                     8000 12-FEB-24
+
+SQL> SELECT SUM(salary) as TotalSalary FROM employee;
+
+TOTALSALARY
+-----------
+      36000
+
+SQL> SELECT AVG(salary) as average FROM employee;
+
+   AVERAGE
+----------
+      7200
+
+SQL> SELECT COUNT(Empid) as NoofEmployees FROM  employee;
+
+NOOFEMPLOYEES
+-------------
+            5
+
+SQL> SELECT MAX(salary) as Maxsalary
+  2  FROM employee;
+
+ MAXSALARY
+----------
+     10000
+
+SQL> CREATE TABLE employee(Empid INT PRIMARY KEY, name Varchar (20), salary decimal(10, 2),
+  2  Hiredate date) ;
+
+Table created.
+
+SQL> INSERT ALL
+  2      INTO employee (Empid, name, salary, Hiredate) VALUES (1, 'Guru', 5000, TO_DATE('2024-04-09', 'YYYY-MM-DD'))
+  3      INTO employee (Empid, name, salary, Hiredate) VALUES (2, 'Devi', 6000, TO_DATE('2024-05-10', 'YYYY-MM-DD'))
+  4      INTO employee (Empid, name, salary, Hiredate) VALUES (3, 'Saron', 10000, TO_DATE('2024-06-09', 'YYYY-MM-DD'))
+  5      INTO employee (Empid, name, salary, Hiredate) VALUES (4, 'Sam', 7000, TO_DATE('2024-01-05', 'YYYY-MM-DD'))
+  6      INTO employee (Empid, name, salary, Hiredate) VALUES (5, 'shruti', 8000, TO_DATE('2024-02-12', 'YYYY-MM-DD'))
+  7  SELECT * FROM dual;
+
+5 rows created.
+
+SQL> select * from employee;
+
+     EMPID NAME                     SALARY HIREDATE
+---------- -------------------- ---------- ---------
+         1 Guru                       5000 09-APR-24
+         2 Devi                       6000 10-MAY-24
+         3 Saron                     10000 09-JUN-24
+         4 Sam                        7000 05-JAN-24
+         5 shruti                     8000 12-FEB-24
+
+SQL> SELECT SUM(salary) as TotalSalary FROM employee;
+
+TOTALSALARY
+-----------
+      36000
+
+SQL> SELECT AVG(salary) as average FROM employee;
+
+   AVERAGE
+----------
+      7200
+
+SQL> SELECT COUNT(Empid) as NoofEmployees FROM  employee;
+
+NOOFEMPLOYEES
+-------------
+            5
+
+SQL> SELECT MAX(salary) as Maxsalary
+  2  FROM employee;
+
+ MAXSALARY
+----------
+     10000
+SQL> select min(salary) as Minsalary from employee;
+
+ MINSALARY
+----------
+      5000
