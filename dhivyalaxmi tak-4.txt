@@ -1,0 +1,141 @@
+
+SQL> -- Create the Employees table (if it doesn't exist or if you renamed it)
+SQL>   CREATE TABLE NewEmployees (
+  2              EmployeeID NUMBER PRIMARY KEY,
+  3              FirstName VARCHAR2(50),
+  4              LastName VARCHAR2(50),
+  5              Email VARCHAR2(100)
+  6              -- other columns...
+  7          );
+
+Table created.
+
+SQL>  -- Create the Projects table with the correct foreign key reference
+SQL>   CREATE TABLE Projects (
+  2              ProjectID NUMBER PRIMARY KEY, -- PRIMARY KEY constraint
+  3              ProjectName VARCHAR2(100) NOT NULL UNIQUE, -- NOT NULL and UNIQUE constraints
+  4              StartDate DATE NOT NULL, -- NOT NULL constraint
+  5              EndDate DATE,
+  6              Budget NUMBER(12, 2) CHECK (Budget > 0), -- CHECK constraint
+  7              ManagerID NUMBER, -- FOREIGN KEY
+  8              CONSTRAINT fk_manager FOREIGN KEY (ManagerID) REFERENCES NewEmployees(EmployeeID), -- FOREIGN KEY constraint
+  9              CONSTRAINT chk_dates CHECK (EndDate > StartDate) -- CHECK constraint to ensure EndDate is after StartDate
+ 10     );
+
+Table created.
+
+SQL> -- Insert values into newEmployees table
+SQL> INSERT INTO newEmployees (EmployeeID, FirstName, LastName, Email)
+  2  VALUES (1, 'John', 'Doe', 'john.doe@example.com');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO newEmployees (EmployeeID, FirstName, LastName, Email)
+  2  VALUES (2, 'Jane', 'Smith', 'jane.smith@example.com');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO newEmployees (EmployeeID, FirstName, LastName, Email)
+  2  VALUES (3, 'Alice', 'Johnson', 'alice.johnson@example.com');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO newEmployees (EmployeeID, FirstName, LastName, Email)
+  2  VALUES (4, 'Bob', 'Brown', 'bob.brown@example.com');
+
+1 row created.
+
+SQL> -- Insert values into projects table
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (1, 'Website Redesign', TO_DATE('2024-07-01', 'YYYY-MM-DD'), TO_DATE('2024-12-31', 'YYYY-MM-DD'), 150000.00, 1);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (2, 'Financial Audit', TO_DATE('2024-08-15', 'YYYY-MM-DD'), TO_DATE('2024-11-15', 'YYYY-MM-DD'), 75000.00, 2);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (3, 'HR System Upgrade', TO_DATE('2024-09-01', 'YYYY-MM-DD'), NULL, 100000.00, 3);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (4, 'Mobile App Development', TO_DATE('2024-10-01', 'YYYY-MM-DD'), TO_DATE('2025-03-31', 'YYYY-MM-DD'), 200000.00, 4);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (5, 'Cloud Migration', TO_DATE('2024-06-15', 'YYYY-MM-DD'), TO_DATE('2024-12-15', 'YYYY-MM-DD'), 300000.00, 3);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (6, 'Cybersecurity Enhancement', TO_DATE('2024-05-01', 'YYYY-MM-DD'), TO_DATE('2024-11-30', 'YYYY-MM-DD'), 250000.00, 2);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (7, 'ERP Implementation', TO_DATE('2024-08-01', 'YYYY-MM-DD'), NULL, 500000.00, 1);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO projects (ProjectID, ProjectName, StartDate, EndDate, Budget, ManagerID)
+  2  VALUES
+  3  (8, 'Customer Feedback System', TO_DATE('2024-09-15', 'YYYY-MM-DD'), TO_DATE('2025-02-28', 'YYYY-MM-DD'), 120000.00, 4);
+
+1 row created.
+
+SQL> select * from newemployees;
+
+EMPLOYEEID FIRSTNAME                                          LASTNAME
+---------- -------------------------------------------------- --------------------------------------------------
+EMAIL
+----------------------------------------------------------------------------------------------------
+         1 John                                               Doe
+john.doe@example.com
+
+         2 Jane                                               Smith
+jane.smith@example.com
+
+         3 Alice                                              Johnson
+alice.johnson@example.com
+
+         4 Bob                                                Brown
+bob.brown@example.com
+
+
+SQL> select * from projects;
+
+ PROJECTID PROJECTNAME                                                                                          STARTDATE ENDDATE       BUDGET  MANAGERID
+---------- ---------------------------------------------------------------------------------------------------- --------- --------- ---------- ----------
+         1 Website Redesign                                                                                     01-JUL-24 31-DEC-24     150000          1
+         2 Financial Audit                                                                                      15-AUG-24 15-NOV-24      75000          2
+         3 HR System Upgrade                                                                                    01-SEP-24               100000          3
+         4 Mobile App Development                                                                               01-OCT-24 31-MAR-25     200000          4
+         5 Cloud Migration                                                                                      15-JUN-24 15-DEC-24     300000          3
+         6 Cybersecurity Enhancement                                                                            01-MAY-24 30-NOV-24     250000          2
+         7 ERP Implementation                                                                                   01-AUG-24               500000          1
+         8 Customer Feedback System                                                                             15-SEP-24 28-FEB-25     120000          4
+
+8 rows selected.
+
+SQL>
