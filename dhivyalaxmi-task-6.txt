@@ -1,0 +1,553 @@
+
+SQL> -- Create the customers table
+SQL> CREATE TABLE customers (
+  2      customer_id INT PRIMARY KEY,
+  3      customer_name VARCHAR2(100),
+  4      email VARCHAR2(100),
+  5      phone VARCHAR2(15),
+  6      address VARCHAR2(255),
+  7      city VARCHAR2(50),
+  8      state VARCHAR2(50),
+  9      postal_code VARCHAR2(10),
+ 10      country VARCHAR2(50)
+ 11  );
+
+Table created.
+
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES
+  3  ('John Doe', 'johndoe@example.com', '1234567890', '123 Elm St', 'Springfield', 'IL', '62704', 'USA'),
+  4  ('Jane Smith', 'janesmith@example.com', '0987654321', '456 Oak St', 'Shelbyville', 'IL', '62565', 'USA'),
+  5  ('Alice Johnson', 'alicej@example.com', '5551234567', '789 Pine St', 'Capital City', 'CA', '90001', 'USA'),
+  6  ('Bob Brown', 'bobbrown@example.com', '2223334444', '101 Maple St', 'Springfield', 'IL', '62701', 'USA'),
+  7  ('Carol White', 'carolwhite@example.com', '1112223333', '202 Birch St', 'Shelbyville', 'IL', '62560', 'USA'),
+  8  ('David Green', 'davidgreen@example.com', '9998887777', '303 Cedar St', 'Capital City', 'CA', '90002', 'USA'),
+  9  ('Eva Black', 'evablack@example.com', '6665554444', '404 Palm St', 'Springfield', 'IL', '62702', 'USA'),
+ 10  ('Frank Blue', 'frankblue@example.com', '3334445555', '505 Ash St', 'Shelbyville', 'IL', '62563', 'USA'),
+ 11  ('Grace Pink', 'gracepink@example.com', '8887776666', '606 Willow St', 'Capital City', 'CA', '90003', 'USA'),
+ 12  ('Hank Purple', 'hankpurple@example.com', '7776665555', '707 Elm St', 'Springfield', 'IL', '62705', 'USA');
+('John Doe', 'johndoe@example.com', '1234567890', '123 Elm St', 'Springfield', 'IL', '62704', 'USA'),
+                                                                                                    *
+ERROR at line 3:
+ORA-00933: SQL command not properly ended
+
+
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('John Doe', 'johndoe@example.com', '1234567890', '123 Elm St', 'Springfield', 'IL', '62704', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Jane Smith', 'janesmith@example.com', '0987654321', '456 Oak St', 'Shelbyville', 'IL', '62565', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Alice Johnson', 'alicej@example.com', '5551234567', '789 Pine St', 'Capital City', 'CA', '90001', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Bob Brown', 'bobbrown@example.com', '2223334444', '101 Maple St', 'Springfield', 'IL', '62701', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Carol White', 'carolwhite@example.com', '1112223333', '202 Birch St', 'Shelbyville', 'IL', '62560', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('David Green', 'davidgreen@example.com', '9998887777', '303 Cedar St', 'Capital City', 'CA', '90002', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Eva Black', 'evablack@example.com', '6665554444', '404 Palm St', 'Springfield', 'IL', '62702', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Frank Blue', 'frankblue@example.com', '3334445555', '505 Ash St', 'Shelbyville', 'IL', '62563', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Grace Pink', 'gracepink@example.com', '8887776666', '606 Willow St', 'Capital City', 'CA', '90003', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Hank Purple', 'hankpurple@example.com', '7776665555', '707 Elm St', 'Springfield', 'IL', '62705', 'USA');
+INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("HR"."CUSTOMERS"."CUSTOMER_ID")
+
+
+SQL> CREATE SEQUENCE customer_seq
+  2  START WITH 1
+  3  INCREMENT BY 1
+  4  NOCACHE;
+
+Sequence created.
+
+SQL> CREATE OR REPLACE TRIGGER trg_customers_id
+  2  BEFORE INSERT ON customers
+  3  FOR EACH ROW
+  4  BEGIN
+  5    :NEW.customer_id := customer_seq.NEXTVAL;
+  6  END;
+  7  /
+
+Trigger created.
+
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('John Doe', 'johndoe@example.com', '1234567890', '123 Elm St', 'Springfield', 'IL', '62704', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Jane Smith', 'janesmith@example.com', '0987654321', '456 Oak St', 'Shelbyville', 'IL', '62565', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Alice Johnson', 'alicej@example.com', '5551234567', '789 Pine St', 'Capital City', 'CA', '90001', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Bob Brown', 'bobbrown@example.com', '2223334444', '101 Maple St', 'Springfield', 'IL', '62701', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Carol White', 'carolwhite@example.com', '1112223333', '202 Birch St', 'Shelbyville', 'IL', '62560', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('David Green', 'davidgreen@example.com', '9998887777', '303 Cedar St', 'Capital City', 'CA', '90002', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Eva Black', 'evablack@example.com', '6665554444', '404 Palm St', 'Springfield', 'IL', '62702', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Frank Blue', 'frankblue@example.com', '3334445555', '505 Ash St', 'Shelbyville', 'IL', '62563', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Grace Pink', 'gracepink@example.com', '8887776666', '606 Willow St', 'Capital City', 'CA', '90003', 'USA');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO customers (customer_name, email, phone, address, city, state, postal_code, country)
+  2  VALUES ('Hank Purple', 'hankpurple@example.com', '7776665555', '707 Elm St', 'Springfield', 'IL', '62705', 'USA');
+
+1 row created.
+
+SQL> CREATE TABLE products (
+  2      product_id INT PRIMARY KEY AUTO_INCREMENT,
+  3      product_name VARCHAR2(100),
+  4      product_description TEXT,
+  5      price DECIMAL(10, 2),
+  6      stock_quantity INT
+  7  );
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+                               *
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> CREATE TABLE products (
+  2      product_id INT PRIMARY KEY,
+  3      product_name VARCHAR2(100),
+  4      product_description CLOB,
+  5      price DECIMAL(10, 2),
+  6      stock_quantity INT
+  7  );
+
+Table created.
+
+SQL> -- Insert data into the products table
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (1, 'Laptop', '15-inch screen, 8GB RAM, 256GB SSD', 799.99, 50);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (2, 'Smartphone', '6-inch display, 128GB storage, 4GB RAM', 499.99, 100);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (3, 'Tablet', '10-inch screen, 64GB storage, 3GB RAM', 299.99, 30);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (4, 'Headphones', 'Over-ear, noise-cancelling', 199.99, 200);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (5, 'Smartwatch', 'Heart rate monitor, GPS', 149.99, 150);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (6, 'Monitor', '27-inch, 4K resolution', 349.99, 75);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (7, 'Keyboard', 'Mechanical, RGB lighting', 99.99, 100);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (8, 'Mouse', 'Wireless, ergonomic', 49.99, 150);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (9, 'Printer', 'All-in-one, wireless', 129.99, 50);
+
+1 row created.
+
+SQL> INSERT INTO products (product_id, product_name, product_description, price, stock_quantity) VALUES (10, 'Speaker', 'Bluetooth, portable', 79.99, 80);
+
+1 row created.
+
+SQL> -- Create the orders table
+SQL> CREATE TABLE orders (
+  2      order_id INT PRIMARY KEY,
+  3      customer_id INT,
+  4      order_date DATE,
+  5      total_amount NUMBER(10, 2),
+  6      FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+  7  );
+
+Table created.
+
+SQL> -- Insert data into the orders table
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (1, 1, TO_DATE('2024-08-25 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 1599.98);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (2, 2, TO_DATE('2024-08-24 10:15:00', 'YYYY-MM-DD HH24:MI:SS'), 499.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (3, 3, TO_DATE('2024-08-23 18:45:00', 'YYYY-MM-DD HH24:MI:SS'), 299.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (4, 4, TO_DATE('2024-08-22 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1049.98);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (5, 5, TO_DATE('2024-08-21 09:30:00', 'YYYY-MM-DD HH24:MI:SS'), 199.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (6, 6, TO_DATE('2024-08-20 16:30:00', 'YYYY-MM-DD HH24:MI:SS'), 149.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (7, 7, TO_DATE('2024-08-19 11:45:00', 'YYYY-MM-DD HH24:MI:SS'), 349.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (8, 8, TO_DATE('2024-08-18 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 99.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (9, 9, TO_DATE('2024-08-17 15:45:00', 'YYYY-MM-DD HH24:MI:SS'), 49.99);
+
+1 row created.
+
+SQL> INSERT INTO orders (order_id, customer_id, order_date, total_amount) VALUES (10, 10, TO_DATE('2024-08-16 13:00:00', 'YYYY-MM-DD HH24:MI:SS'), 129.99);
+
+1 row created.
+
+SQL> -- Create the order_items table
+SQL> CREATE TABLE order_items (
+  2      order_item_id INT PRIMARY KEY,
+  3      order_id INT,
+  4      product_id INT,
+  5      quantity INT,
+  6      price NUMBER(10, 2),
+  7      FOREIGN KEY (order_id) REFERENCES orders(order_id),
+  8      FOREIGN KEY (product_id) REFERENCES products(product_id)
+  9  );
+
+Table created.
+
+SQL>
+SQL> -- Insert data into the order_items table
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (1, 1, 1, 2, 799.99);  -- 2 Laptops
+  2  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (2, 2, 2, 1, 499.99);  -- 1 Smartphone
+  3  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (3, 3, 3, 1, 299.99);  -- 1 Tablet
+  4  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (4, 4, 6, 1, 149.99);  -- 1 Smartwatch
+  5  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (5, 5, 4, 1, 199.99);  -- 1 Headphones
+  6  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (6, 6, 5, 1, 149.99);  -- 1 Monitor
+  7  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (7, 7, 7, 1, 349.99);  -- 1 Keyboard
+  8  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (8, 8, 8, 1, 99.99);   -- 1 Mouse
+  9  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (9, 9, 9, 1, 49.99);   -- 1 Printer
+ 10  INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (10, 10, 10, 1, 79.99);  -- 1 Speaker
+ 11
+SQL>
+SQL>
+SQL> -- Insert data into the order_items table
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (1, 1, 1, 2, 799.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (2, 2, 2, 1, 499.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (3, 3, 3, 1, 299.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (4, 4, 6, 1, 149.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (5, 5, 4, 1, 199.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (6, 6, 5, 1, 149.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (7, 7, 7, 1, 349.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (8, 8, 8, 1, 99.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (9, 9, 9, 1, 49.99);
+
+1 row created.
+
+SQL> INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price) VALUES (10, 10, 10, 1, 79.99);
+
+1 row created.
+
+SQL> -- Total number of orders
+SQL> SELECT COUNT(*) AS total_orders FROM orders;
+
+TOTAL_ORDERS
+------------
+          10
+
+SQL>
+SQL> -- Average order value
+SQL> SELECT AVG(total_amount) AS average_order_value FROM orders;
+
+AVERAGE_ORDER_VALUE
+-------------------
+            442.988
+
+SQL>
+SQL> -- Top products
+SQL> SELECT p.product_name, SUM(oi.quantity) AS total_quantity_sold
+  2  FROM order_items oi
+  3  JOIN products p ON oi.product_id = p.product_id
+  4  GROUP BY p.product_name
+  5  ORDER BY total_quantity_sold DESC
+  6  FETCH FIRST 10 ROWS ONLY;
+
+PRODUCT_NAME                                                                                         TOTAL_QUANTITY_SOLD
+---------------------------------------------------------------------------------------------------- -------------------
+Laptop                                                                                                                 2
+Tablet                                                                                                                 1
+Headphones                                                                                                             1
+Speaker                                                                                                                1
+Monitor                                                                                                                1
+Keyboard                                                                                                               1
+Mouse                                                                                                                  1
+Printer                                                                                                                1
+Smartphone                                                                                                             1
+Smartwatch                                                                                                             1
+
+10 rows selected.
+
+SQL> -- Most frequent products bought by customers
+SQL> SELECT c.customer_name, p.product_name, COUNT(*) AS purchase_frequency
+  2  FROM orders o
+  3  JOIN customers c ON o.customer_id = c.customer_id
+  4  JOIN order_items oi ON o.order_id = oi.order_id
+  5  JOIN products p ON oi.product_id = p.product_id
+  6  GROUP BY c.customer_name, p.product_name
+  7  ORDER BY purchase_frequency DESC;
+
+CUSTOMER_NAME
+----------------------------------------------------------------------------------------------------
+PRODUCT_NAME                                                                                         PURCHASE_FREQUENCY
+---------------------------------------------------------------------------------------------------- ------------------
+John Doe
+Laptop                                                                                                                1
+
+Jane Smith
+Smartphone                                                                                                            1
+
+Alice Johnson
+Tablet                                                                                                                1
+
+Bob Brown
+Monitor                                                                                                               1
+
+Hank Purple
+Speaker                                                                                                               1
+
+David Green
+Smartwatch                                                                                                            1
+
+Eva Black
+Keyboard                                                                                                              1
+
+Frank Blue
+Mouse                                                                                                                 1
+
+Grace Pink
+Printer                                                                                                               1
+
+Carol White
+Headphones                                                                                                            1
+
+
+10 rows selected.
+
+SQL>
+SQL> -- Peak order times
+SQL> -- By Hour
+SQL> SELECT EXTRACT(HOUR FROM order_date) AS order_hour, COUNT(*) AS total_orders
+  2  FROM orders
+  3  GROUP BY EXTRACT(HOUR FROM order_date)
+  4  ORDER BY total_orders DESC;
+GROUP BY EXTRACT(HOUR FROM order_date)
+                           *
+ERROR at line 3:
+ORA-30076: invalid extract field for extract source
+
+
+SQL>
+SQL> -- By Day of the Week
+SQL> SELECT TO_CHAR(order_date, 'D') AS order_day, COUNT(*) AS total_orders
+  2  FROM orders
+  3  GROUP BY TO_CHAR(order_date, 'D')
+  4  ORDER BY total_orders DESC;
+
+O TOTAL_ORDERS
+- ------------
+6            2
+7            2
+1            2
+3            1
+4            1
+2            1
+5            1
+
+7 rows selected.
+
+SQL>
+SQL> -- By Month
+SQL> SELECT EXTRACT(MONTH FROM order_date) AS order_month, COUNT(*) AS total_orders
+  2  FROM orders
+  3  GROUP BY EXTRACT(MONTH FROM order_date)
+  4  ORDER BY total_orders DESC;
+
+ORDER_MONTH TOTAL_ORDERS
+----------- ------------
+          8           10
+
+SQL> -- Summary Report
+SQL> SELECT
+  2      (SELECT COUNT(*) FROM orders) AS total_orders,
+  3      (SELECT AVG(total_amount) FROM orders) AS average_order_value,
+  4      (SELECT p.product_name
+  5       FROM order_items oi
+  6       JOIN products p ON oi.product_id = p.product_id
+  7       GROUP BY p.product_name
+  8       ORDER BY SUM(oi.quantity) DESC
+  9       FETCH FIRST 1 ROWS ONLY) AS top_product
+ 10  FROM dual;
+
+TOTAL_ORDERS AVERAGE_ORDER_VALUE TOP_PRODUCT
+------------ ------------------- ----------------------------------------------------------------------------------------------------
+          10             442.988 Laptop
+
+SQL>
+SQL> -- Top Products (Repetition of earlier query)
+SQL> SELECT p.product_name, SUM(oi.quantity) AS total_quantity_sold
+  2  FROM order_items oi
+  3  JOIN products p ON oi.product_id = p.product_id
+  4  GROUP BY p.product_name
+  5  ORDER BY total_quantity_sold DESC
+  6  FETCH FIRST 10 ROWS ONLY;
+
+PRODUCT_NAME                                                                                         TOTAL_QUANTITY_SOLD
+---------------------------------------------------------------------------------------------------- -------------------
+Laptop                                                                                                                 2
+Tablet                                                                                                                 1
+Headphones                                                                                                             1
+Speaker                                                                                                                1
+Monitor                                                                                                                1
+Keyboard                                                                                                               1
+Mouse                                                                                                                  1
+Printer                                                                                                                1
+Smartphone                                                                                                             1
+Smartwatch                                                                                                             1
+
+10 rows selected.
+
+SQL>
